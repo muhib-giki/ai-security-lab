@@ -46,6 +46,9 @@ def main():
     except requests.exceptions.Timeout:
         print("Site took too long to respond")
         return 1
+    except requests.exceptions.SSLError:
+        print("Site was reached, but its TLS certificate is invalid")
+        return 1
     except requests.exceptions.ConnectionError:
         print("Site couldn't be reached")
         return 1
