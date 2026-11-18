@@ -48,8 +48,7 @@ def login():
         print("Session table: ", SESSIONS)
 
         response = make_response(redirect("/dashboard"))
-        response.set_cookie("session_id", session_id,
-                            httponly=True, samesite="Lax")
+        response.set_cookie("session_id", session_id, httponly=True, samesite="Lax")
         return response
     return "Wrong username or password", 401
 
@@ -62,12 +61,29 @@ def dashboard():
 
     if not username:
         return "Please log in first", 401
+    # return f"""
+    # <p>Private dashboard of {username}</p>
+    # <form method="POST" action="/logout">
+    #   <button>Log out</button>
+    # </form>
+    # """
+
     return f"""
-    <p>Private dashboard of {username}</p>
-    <form method="POST" action="/logout">
-      <button>Log out</button>
+    <h2>Dashboard of {username}</h2>
+    <form method="POST" action="/delete-account">
+      <button style="font-size: 20px; padding: 15px;">Delete my account</button>
     </form>
     """
+
+@app.route("/delete-account", methods=["POST"])
+def delete_account():
+    session_id = request.cookies.get("session_id")
+    username = SESSIONS.get(session_id)
+    if not username:
+        return "Please log in first", 401
+    print(f"!!! ACCOUNT DELETED: {username} !!!")
+    return f"Account {username} has been deleted."
+
 @app.route("/logout", methods=["POST"])
 def logout():
     session_id = request.cookies.get("session_id")
@@ -77,6 +93,11 @@ def logout():
     response.delete_cookie("session_id")
     return response
 
+@app.after_request
+def set_security_headers(response):
+    response.headers["X-Frame-Options"] = "DENY"
+    response.headers["Content-Security-Policy"] = "frame-ancestors 'none'"
+    return response
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)

