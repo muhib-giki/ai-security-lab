@@ -1,0 +1,11 @@
+Forming a Limited Liability Company
+
+A limited liability company, or LLC, is a popular business structure in the United States because it combines the liability protection of a corporation with the tax simplicity of a partnership. The owners of an LLC are called members, and their personal assets are generally protected from the debts and liabilities of the business.
+
+To form an LLC, you must file a document called the Articles of Organization with the Secretary of State in the state where you want to register. Each state charges a filing fee, which varies widely. For example, some states charge as little as fifty dollars while others charge several hundred dollars. After filing, the state reviews the documents and, if everything is in order, issues a certificate confirming the LLC exists.
+
+Every LLC must designate a registered agent. A registered agent is a person or company responsible for receiving official legal and tax documents on behalf of the business, such as lawsuits or government notices. The registered agent must have a physical address in the state of formation and be available during normal business hours.
+
+For tax purposes, an LLC is usually treated as a pass-through entity by default. This means the business itself does not pay federal income tax. Instead, the profits and losses pass through to the members, who report them on their personal tax returns. However, an LLC can elect to be taxed as a corporation if that is more advantageous.
+
+Most LLCs are also required to file a Beneficial Ownership Information report, known as a BOI report, with the Financial Crimes Enforcement Network, or FinCEN. This report discloses the individuals who ultimately own or control the company. Failing to file the BOI report on time can result in significant penalties.
